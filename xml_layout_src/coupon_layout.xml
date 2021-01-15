@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:background="#464159"
+    android:id="@+id/coupon_fragment_layout"
+    android:onClick="open_coupon">
+
+    <FrameLayout
+        android:id="@+id/coupon_image_frame"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        >
+
+    <ImageView
+        android:id="@+id/coupon_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/frame" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/coupon_title"
+        android:padding="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#c7f0db"
+        android:text="Title"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginRight="115dp"/>
+
+    <TextView
+        android:padding="12dp"
+        android:id="@+id/coupon_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="Description"
+        android:textColor="#8bbabb"
+        android:layout_marginTop="-20dp"
+        android:layout_below="@+id/coupon_title"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginRight="115dp"/>
+
+    <TextView
+        android:padding="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/coupon_id"
+        android:visibility="invisible" />
+</RelativeLayout>

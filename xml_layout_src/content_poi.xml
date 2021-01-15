@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".POIActivity"
+    android:id="@+id/scroll_view_poi_layout"
+    tools:showIn="@layout/activity_poi">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/background_behind_POI_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:textSize="30sp"
+            android:gravity="top|center_horizontal"
+            android:background="@color/colorPrimary"
+            android:visibility="invisible"
+            android:text="title"/>
+
+
+
+
+        <ImageView
+            android:id="@+id/picture_POI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/background_behind_POI_title"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/description_POI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/picture_POI"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#00A86B"
+            android:layout_above="@id/description_POI"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#00A86B"
+            android:layout_below="@id/description_POI"/>
+
+
+        <TextView
+            android:id="@+id/available_coupons_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available Coupons"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_inverse_title_label"
+            android:layout_marginHorizontal="20dp"
+            android:layout_below="@+id/description_POI"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textColor="#B1BCBE"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/coupon_list_POI"
+            android:layout_below="@id/available_coupons_text_view"/>
+
+    </RelativeLayout>
+
+</ScrollView>

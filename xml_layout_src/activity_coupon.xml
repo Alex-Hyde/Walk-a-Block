@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CouponActivity"
+    android:id="@+id/main_coupon_relative_layout">
+
+    <ScrollView
+        android:id="@+id/coupon_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/activity_maps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/coupon_map"/>
+
+            <RelativeLayout
+                android:id="@+id/grey_overlay"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/grey_rectangle"
+                    android:background="#99555555"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_alignParentBottom="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_above="@+id/grey_rectangle"
+                    android:text="View Location Page"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="20sp"/>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/transparent_map_overlay_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"/>
+
+            <include layout="@layout/coupon_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@id/title_floating_button"
+                android:background="@drawable/rounded_corners_background"
+                android:id="@+id/coupon_coupon_view"/>
+
+            <ImageView
+                android:id="@+id/rect"
+                android:layout_height="35dp"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_above="@id/coupon_coupon_view"
+                android:src="@drawable/rectangle"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#00A86B"
+                android:layout_marginBottom="0dp"
+                android:layout_above="@id/coupon_coupon_view"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#00A86B"
+                android:layout_marginBottom="35dp"
+                android:layout_above="@id/coupon_coupon_view"/>
+
+            <Button
+                android:id="@+id/title_floating_button"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="-20dp"
+                android:text="GO"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:background="@drawable/more_rounded_corners"
+                android:layout_below="@+id/transparent_map_overlay_coupon"
+                android:onClick="go"/>
+
+            <Button
+                android:id="@+id/title_floating_button_cancel"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="-20dp"
+                android:text="X"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:background="@drawable/more_rounded_corners_red"
+                android:layout_below="@+id/transparent_map_overlay_coupon"
+                android:visibility="invisible"
+                android:onClick="cancel"/>
+
+            <TextView
+                android:id="@+id/distance_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/coupon_coupon_view"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="9dp"
+                android:layout_marginBottom="0dp"
+                android:text="10km"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99999999"
+        android:id="@+id/finished_coupon_view"
+        android:visibility="invisible"
+        android:onClick="blank">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="100dp"
+            android:background="#FFFFFF">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:backgroundTint="#FFFFFF"
+                app:borderWidth="0dp"
+                app:rippleColor="#00FFFFFF"
+                app:srcCompat="@drawable/ic_clear_black_24dp"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                android:onClick="close_barcode"/>
+
+            <TextView
+                android:id="@+id/coupon_barcode_title_restaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="30dp"
+                android:textSize="30sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/coupon_barcode_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/coupon_barcode_title_restaurant"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/barcode_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingTop="30dp"/>
+
+            <TextView
+                android:id="@+id/barcode_string_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="70dp"
+                android:textSize="30sp"
+                android:textColor="#000000"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="go_home"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+</RelativeLayout>
